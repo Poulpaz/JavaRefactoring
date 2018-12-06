@@ -1,26 +1,24 @@
 package fr.videoclub;
+
 public class Movie {
 
-	public static final int CHILDRENS = 2;
-	public static final int REGULAR = 0;
-	public static final int NEW_RELEASE = 1;
-	private String _title;
-	private int _priceCode;
+    private String title;
+    private Category category;
 
-	public Movie(String title, int priceCode) {
-		_title = title;
-		_priceCode = priceCode;
-	}
+    public Movie(String title, Category category) {
+        this.title = title;
+        this.category = category;
+    }
 
-	public int getPriceCode() {
-		return _priceCode;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setPriceCode(int arg) {
-		_priceCode = arg;
-	}
+    double getCharge(int daysRented) {
+        return category.getCharge(daysRented);
+    }
 
-	public String getTitle() {
-		return _title;
-	};
+    int getFrequentRenterPoints(int daysRented) {
+        return category.getFrequentRenterPoints(daysRented);
+    }
 }
